@@ -1,0 +1,10 @@
+body{
+    height: 93vh; /*viewport height*/
+    width: 95;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font:normal 20px 'Arial';
+    color: black;
+}
