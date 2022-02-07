@@ -1,18 +1,25 @@
+Dicas = () =>{
+    alert("Para jogar utilize as teclas direcionais do seu teclado, Se a cobrinha se chocar você perde! Divirta-se ")
+}
+
 let canvas = document.getElementById('snake');
 let context = canvas.getContext("2d");
+let score = document.getElementById('score-p');
 let box = 32;
 let snake = [];
 snake[0] = {
     x: 8 * box,
     y: 8 * box
 }
+
 let direction = "right";
 let food = {
     x: Math.floor(Math.random() * 15 - 1) * box,
     y: Math.floor(Math.random() * 15 + 1) * box
 }
+
 criarBG  = () => {
-    context.fillStyle = 'Lightgreen';
+    context.fillStyle = '#8a8a9475';
     context.fillRect(0, 0, 16 * box, 16 * box);//posição de x e y && largura e altura
 }
 
@@ -23,7 +30,7 @@ criarCobrinha = () => {
     }
 }
 drawFood = () => {
-    context.fillStyle = 'yellow';
+    context.fillStyle = 'white';
     context.fillRect(food.x, food.y, box , box);
 }
 
@@ -36,7 +43,9 @@ function update (event) {
     if(event.keyCode == 40 && direction != 'up') direction = 'down';  
 }
 
+
 iniciarJogo = () => {
+
     if(snake[0].x > 15 * box && direction == 'right') snake[0].x = 0;
     if(snake[0].x < 0 && direction == 'left') snake[0].x = 16 * box;
     if(snake[0].y > 15 * box && direction == 'down' ) snake[0].y = 0;
@@ -69,7 +78,7 @@ iniciarJogo = () => {
         food.x = Math.floor(Math.random() * 15 + 1) * box;
         food.y = Math.floor(Math.random() * 15 + 1) * box;
     }
-    
+
 
     let newHead = {
         x: snakeX,

@@ -1,10 +1,13 @@
 body{
     height: 93vh; /*viewport height*/
-    width: 95;
+    width: 95vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     font:normal 20px 'Arial';
     color: black;
+    background:linear-gradient(to right, #6d3179, #A154DE,#9169F5,#5654DE,#2d3b64);
 }
+
+
